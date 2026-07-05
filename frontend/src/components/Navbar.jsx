@@ -4,33 +4,25 @@ import "../styles/navbar.css";
 function Navbar() {
   return (
     <nav className="navbar">
+
       <div className="logo">
-        AI Hazard Response
+        🛡 AI Hazard Response
       </div>
 
-      <ul className="nav-links">
+      <div className="nav-links">
 
-        <li>
-          <NavLink to="/">Home</NavLink>
-        </li>
+        <NavLink to="/">Home</NavLink>
 
-        <li>
-          <NavLink to="/simulation">Simulation</NavLink>
-        </li>
+        <NavLink to="/simulation">Simulation</NavLink>
 
-        <li>
-          <NavLink to="/dashboard">Dashboard</NavLink>
-        </li>
+        <NavLink to="/dashboard">Dashboard</NavLink>
 
-        <li>
-          <NavLink to="/reports">Reports</NavLink>
-        </li>
+        <NavLink to="/reports">Reports</NavLink>
 
-        <li>
-          <NavLink to="/about">About</NavLink>
-        </li>
+        <NavLink to="/about">About</NavLink>
 
-      </ul>
+      </div>
+
     </nav>
   );
 }
