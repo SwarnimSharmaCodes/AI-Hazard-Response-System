@@ -499,3 +499,117 @@ NavLink performs navigation and automatically knows when it is active.
 Q. Why organize CSS into multiple files?
 
 To improve maintainability and follow the Single Responsibility Principle.
+
+
+
+# React State (useState)
+
+State is the memory of a React component.
+
+When state changes, React automatically re-renders the component.
+
+Example:
+
+```jsx
+const [count, setCount] = useState(0);
+```
+
+- `count` → current value
+- `setCount` → function to update the value
+- `0` → initial value
+
+---
+
+# Props Destructuring
+
+Instead of:
+
+```jsx
+function Card(props){
+    return props.title;
+}
+```
+
+We use:
+
+```jsx
+function Card({ title }){
+    return title;
+}
+```
+
+This is called object destructuring in React props.
+
+---
+
+# Why use map()?
+
+`map()` converts every object in an array into a React component.
+
+Example:
+
+```jsx
+hazards.map((hazard) => (
+    <HazardCard key={hazard.id} hazard={hazard}/>
+))
+```
+
+Benefits:
+- Reusable
+- Scalable
+- Cleaner code
+- Easier maintenance
+
+
+| Variable | Saved after render? | Re-renders UI? |
+| -------- | ------------------- | -------------- |
+| let      | ❌                   | ❌              |
+| useState | ✅                   | ✅              |
+| useRef   | ✅                   | ❌              |
+
+
+# React Event Handling
+
+onChange runs whenever the value of an input changes.
+
+Example:
+
+<input onChange={handleImageChange} />
+
+For file inputs:
+
+event.target.files
+
+returns the selected files.
+
+files[0]
+
+returns the first selected file.
+
+--------------------------------------------
+
+# URL.createObjectURL()
+
+Creates a temporary URL pointing to a file stored in browser memory.
+
+Example:
+
+const imageURL = URL.createObjectURL(file);
+
+Used to preview uploaded images before sending them to the backend.
+
+--------------------------------------------
+
+# Conditional Rendering
+
+React allows rendering components conditionally.
+
+Example:
+
+{preview && <img src={preview} />}
+
+If preview exists,
+React renders the image.
+
+If preview is null,
+nothing is rendered.
