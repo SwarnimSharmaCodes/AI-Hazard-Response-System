@@ -23,25 +23,40 @@ function Simulation() {
     };
 
     const handleAnalyze = async () => {
+
     if (!selectedImage) {
+
         alert("Please upload an image first.");
+
         return;
     }
 
     try {
+
         setLoading(true);
 
         const formData = new FormData();
+
         formData.append("image", selectedImage);
 
         const data = await analyzeImage(formData);
 
         setResult(data);
-    } catch (error) {
+
+    }
+
+    catch (error) {
+
         console.error(error);
+
         alert("Analysis failed.");
-    } finally {
+
+    }
+
+    finally {
+
         setLoading(false);
+
     }
 };
 
@@ -82,11 +97,53 @@ function Simulation() {
                 )
             }
 
-      <button className="analyze-btn">
-        Analyze Hazard
+      <button className="analyze-btn" onClick={handleAnalyze}
+    disabled={loading}>
+        {loading ? "Analyzing..." : "Analyze Hazard"}
       </button>
 
+      {
+    result && (
+
+        <div className="result-card">
+
+            <h2>Analysis Result</h2>
+
+            <p>
+
+                <strong>Hazard:</strong> {result.hazard}
+
+            </p>
+
+            <p>
+
+                <strong>Severity:</strong> {result.severity}
+
+            </p>
+
+            <p>
+
+                <strong>Confidence:</strong> {result.confidence}%
+
+            </p>
+
+            <p>
+
+                <strong>Recommendation:</strong>
+
+                {" "}
+
+                {result.recommendation}
+
+            </p>
+
+        </div>
+
+    )
+}
+
     </section>
+
   );
 }
 

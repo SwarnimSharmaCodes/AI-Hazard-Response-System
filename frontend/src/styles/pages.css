@@ -232,3 +232,31 @@
     box-shadow:0 0 15px rgba(59,130,246,.35);
 
 }
+
+.result-card{
+
+    margin-top:40px;
+
+    background:#1e293b;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    text-align:left;
+
+    border:2px solid #3b82f6;
+
+}
+
+.result-card h2{
+
+    margin-bottom:20px;
+
+}
+
+.result-card p{
+
+    margin-bottom:12px;
+
+}
