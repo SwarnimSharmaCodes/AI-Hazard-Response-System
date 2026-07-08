@@ -613,3 +613,53 @@ React renders the image.
 
 If preview is null,
 nothing is rendered.
+
+
+
+# Day 5
+
+## React
+
+- useState stores component state.
+- Props make components reusable.
+- map() renders lists dynamically.
+- Components should follow SRP.
+
+## API
+
+- Axios sends HTTP requests.
+- FormData sends files.
+- async/await waits for API responses.
+
+## Backend
+
+- Express handles routes.
+- Multer stores uploaded images in memory.
+- req.file contains uploaded image.
+- Controllers contain business logic.
+- Middleware processes requests before controllers.
+
+## Environment Variables
+
+- .env stores secrets.
+- dotenv loads environment variables.
+- process.env accesses variables.
+- Never push .env to GitHub.
+
+## Architecture
+
+Frontend
+↓
+Axios
+↓
+Express Route
+↓
+Multer Middleware
+↓
+Controller
+↓
+Mock AI
+↓
+Response
+↓
+React UI

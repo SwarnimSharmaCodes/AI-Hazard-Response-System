@@ -1,6 +1,7 @@
 import dashboardData from "../data/dashboardData";
 import DashboardCard from "../components/DashboardCard";
 import HazardChart from "../components/HazardChart";
+import AnalysisTable from "../components/AnalysisTable";
 import "../styles/pages.css";
 
 function Dashboard() {
@@ -44,6 +45,8 @@ function Dashboard() {
     <HazardChart />
 
 </div>
+
+        <AnalysisTable />
 
         </section>
 

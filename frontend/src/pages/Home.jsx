@@ -2,6 +2,7 @@ import { useState } from "react";
 import hazards from "../data/hazards";
 import HazardCard from "../components/HazardCard";
 import "../styles/pages.css";
+import { Link } from "react-router-dom";
 
 function Home() {
 
@@ -21,13 +22,17 @@ function Home() {
 
         <div className="hero-buttons">
 
-          <button className="primary-btn">
-            Start Simulation
-          </button>
+          <Link to="/simulation">
+            <button className="primary-btn">
+              Start Simulation
+            </button>
+          </Link>
 
-          <button className="secondary-btn">
-            View Dashboard
-          </button>
+          <Link to="/dashboard">
+            <button className="secondary-btn">
+              View Dashboard
+            </button>
+          </Link>
 
         </div>
 

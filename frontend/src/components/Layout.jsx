@@ -5,15 +5,15 @@ import Footer from "./Footer";
 
 function Layout() {
     return (
-        <>
+        <div className="layout">
             <Navbar />
 
-            <main>
+            <main className="main-content">
                 <Outlet />
             </main>
 
             <Footer />
-        </>
+        </div>
     );
 }
 

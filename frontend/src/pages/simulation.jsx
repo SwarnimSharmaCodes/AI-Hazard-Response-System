@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/pages.css";
 import { analyzeImage } from "../services/api";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 function Simulation() {
     const [preview, setPreview] = useState(null);
@@ -101,6 +102,8 @@ function Simulation() {
     disabled={loading}>
         {loading ? "Analyzing..." : "Analyze Hazard"}
       </button>
+
+      {loading && <LoadingSpinner />}
 
       {
     result && (
