@@ -1,45 +1,33 @@
-export const analyzeImage = async (req, res) => {
+const analyzeImage = async (req, res) => {
 
     try {
 
         if (!req.file) {
-
             return res.status(400).json({
-
                 message: "No image uploaded."
-
             });
-
         }
 
-        res.status(200).json({
+        // Simulate AI thinking time
+        await new Promise(resolve => setTimeout(resolve, 2000));
 
-            success: true,
-
+        res.json({
             hazard: "Fire Hazard",
-
             severity: "High",
-
-            confidence: 96,
-
-            recommendation: "Evacuate the area immediately.",
-
-            filename: req.file.originalname
-
+            confidence: "96%",
+            recommendation: "Evacuate the area immediately."
         });
 
-    }
-
-    catch (error) {
+    } catch (error) {
 
         console.error(error);
 
         res.status(500).json({
-
-            message: "Server Error"
-
+            message: "Analysis failed."
         });
 
     }
 
 };
+
+export default analyzeImage;
