@@ -663,3 +663,64 @@ Mock AI
 Response
 ↓
 React UI
+
+# Day X - Version 1 Completed
+
+## React Concepts
+- React Router
+- Nested Routes
+- Layout Component
+- Outlet
+- Reusable Components
+- Mapping Arrays
+- Props
+- Conditional Rendering
+
+## Architecture
+- Single Responsibility Principle
+- Centralized Data Files
+- Reusable Tables
+- Component Reusability
+
+## Backend
+- Express
+- Multer
+- REST API
+- Controllers
+- Routes
+- Mock AI Response
+
+## Features Built
+- Dashboard
+- Reports
+- CSV Export
+- PDF Export
+- Charts
+- Image Upload
+- Analysis API
+
+## CSS
+- Flexbox
+- Grid
+- Responsive Layout
+- Sticky Footer
+
+
+
+## MongoDB CRUD Operations
+
+### Create
+- Used to insert a new document.
+- Mongoose Function: Report.create()
+
+### Read
+- Used to retrieve documents.
+- Report.find() -> All documents
+- Report.findOne() -> First matching document
+- Report.findById() -> Search by MongoDB ObjectId
+
+### Update
+- Report.findByIdAndUpdate()
+
+### Delete
+- Report.findByIdAndDelete()

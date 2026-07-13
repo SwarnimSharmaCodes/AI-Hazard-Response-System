@@ -2,7 +2,7 @@ import express from "express";
 
 import upload from "../middlewares/upload.js";
 
-import analyzeImage from "../controllers/analyzeController.js";
+import { analyzeImage, getReports } from "../controllers/analyzeController.js";
 
 const router = express.Router();
 
@@ -11,5 +11,7 @@ router.post(
     upload.single("image"),
     analyzeImage
 );
+
+router.get("/reports", getReports);
 
 export default router;

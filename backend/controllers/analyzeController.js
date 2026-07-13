@@ -1,3 +1,5 @@
+import Report from "../models/Report.js";
+
 const analyzeImage = async (req, res) => {
 
     try {
@@ -11,12 +13,17 @@ const analyzeImage = async (req, res) => {
         // Simulate AI thinking time
         await new Promise(resolve => setTimeout(resolve, 2000));
 
-        res.json({
-            hazard: "Fire Hazard",
+        const reportData = {
+            hazardType: "Fire Hazard",
+            location: "Unknown",
             severity: "High",
-            confidence: "96%",
+            description: "Fire hazard detected from uploaded image.",
             recommendation: "Evacuate the area immediately."
-        });
+        };
+
+        const savedReport = await Report.create(reportData);
+
+        res.json(savedReport);
 
     } catch (error) {
 
@@ -29,5 +36,24 @@ const analyzeImage = async (req, res) => {
     }
 
 };
+const getReports = async (req, res) => {
+    try {
 
-export default analyzeImage;
+        const reports = await Report.find().sort({ createdAt: -1 });
+
+        res.status(200).json(reports);
+
+    } catch (error) {
+
+        console.error(error);
+
+        res.status(500).json({
+            message: "Unable to fetch reports."
+        });
+
+    }
+};
+
+export {
+    analyzeImage, getReports
+};

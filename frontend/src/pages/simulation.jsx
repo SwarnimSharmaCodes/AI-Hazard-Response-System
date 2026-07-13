@@ -114,7 +114,7 @@ function Simulation() {
 
             <p>
 
-                <strong>Hazard:</strong> {result.hazard}
+                <strong>Hazard:</strong> {result.hazardType}
 
             </p>
 
@@ -126,7 +126,7 @@ function Simulation() {
 
             <p>
 
-                <strong>Confidence:</strong> {result.confidence}%
+                <strong>Confidence:</strong> 96%
 
             </p>
 

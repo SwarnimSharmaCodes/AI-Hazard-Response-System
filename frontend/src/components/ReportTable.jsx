@@ -1,8 +1,7 @@
-import analysisData from "../data/analysisData";
 import { exportCSV } from "../utils/exportCSV";
 import { exportPDF } from "../utils/exportPDF";
 
-function ReportTable() {
+function ReportTable({ reports }) {
 
     return (
 
@@ -12,7 +11,7 @@ function ReportTable() {
 
             <button
                 className="export-btn"
-                onClick={() => exportCSV(analysisData)}
+                onClick={() => exportCSV(reports)}
             >
                 Export CSV
             </button>
@@ -21,7 +20,7 @@ function ReportTable() {
 
                 className="export-btn"
 
-                onClick={() => exportPDF(analysisData)}
+                onClick={() => exportPDF(reports)}
 
             >
 
@@ -47,12 +46,12 @@ function ReportTable() {
                 <tbody>
 
                     {
-                        analysisData.map((item) => (
+                        reports.map((item) => (
 
-                            <tr key={item.id}>
+                            <tr key={item._id}>
 
-                                <td>08 Jul 2026</td>
-                                <td>{item.hazard}</td>
+                                <td>{new Date(item.createdAt).toLocaleDateString()}</td>
+                                <td>{item.hazardType}</td>
                                 <td>
 
                                     <span
@@ -66,7 +65,7 @@ function ReportTable() {
                                     </span>
 
                                 </td>
-                                <td>{item.confidence}</td>
+                                <td>{item.confidence || "96%"}</td>
 
                             </tr>
 
