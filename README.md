@@ -1,2 +1,3 @@
-# AI-Hazard Response System
-AI-powered industrial hazard response and safety simulation dashboard.
+# Sentra
+
+Industrial Hazard Intelligence Platform

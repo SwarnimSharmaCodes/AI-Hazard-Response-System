@@ -1,4 +1,6 @@
+import { analyzeHazardImage } from "../services/geminiService.js";
 import Report from "../models/Report.js";
+
 
 const analyzeImage = async (req, res) => {
 
@@ -13,15 +15,32 @@ const analyzeImage = async (req, res) => {
         // Simulate AI thinking time
         await new Promise(resolve => setTimeout(resolve, 2000));
 
+        console.log(req.file);
+        console.log(req.file.path);
+
+        const aiResponse = await analyzeHazardImage(
+            req.file.buffer,
+            req.file.mimetype
+        );
+
+        const cleanResponse = aiResponse
+            .replace(/```json/g, "")
+            .replace(/```/g, "")
+            .trim();
+
+        const aiData = JSON.parse(cleanResponse);
+
         const reportData = {
-            hazardType: "Fire Hazard",
+            hazardType: aiData.hazardType,
             location: "Unknown",
-            severity: "High",
-            description: "Fire hazard detected from uploaded image.",
-            recommendation: "Evacuate the area immediately."
+            severity: aiData.severity,
+            confidence: aiData.confidence,
+            description: `${aiData.hazardType} detected from uploaded image.`,
+            recommendation: aiData.recommendation,
         };
 
         const savedReport = await Report.create(reportData);
+
 
         res.json(savedReport);
 

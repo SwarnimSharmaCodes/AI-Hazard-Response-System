@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className="footer">
       <p>
-        © 2026 AI-Powered Industrial Hazard Response & Safety Simulation System
+        © 2026 Sentra Industrial Hazard Response & Safety Simulation System
       </p>
     </footer>
   );

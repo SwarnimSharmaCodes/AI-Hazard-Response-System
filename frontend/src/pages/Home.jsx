@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 function Home() {
 
-  const [platformName] = useState("AI Hazard Response System");
+  const [platformName] = useState("Sentra");
 
   return (
     <div className="home">
@@ -16,8 +16,8 @@ function Home() {
         <h1>{platformName}</h1>
 
         <p>
-          AI-powered Industrial Hazard Detection,
-          Simulation and Emergency Response Platform.
+          Industrial Hazard Intelligence Platform for
+          Detection, Response and Safety Management.
         </p>
 
         <div className="hero-buttons">

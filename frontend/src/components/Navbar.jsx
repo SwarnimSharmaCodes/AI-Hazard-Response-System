@@ -6,7 +6,7 @@ function Navbar() {
     <nav className="navbar">
 
       <div className="logo">
-        🛡 AI Hazard Response
+        🛡 Sentra
       </div>
 
       <div className="nav-links">

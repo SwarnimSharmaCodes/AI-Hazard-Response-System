@@ -724,3 +724,69 @@ React UI
 
 ### Delete
 - Report.findByIdAndDelete()
+
+
+
+# July 13, 2026
+
+## MongoDB
+- Connected MongoDB Atlas with Express backend.
+- Created Report schema using Mongoose.
+- Used create(), find(), sort().
+- Stored hazard analysis reports.
+
+## Multer
+- Learned difference between diskStorage() and memoryStorage().
+- memoryStorage stores uploaded files inside req.file.buffer.
+- No physical image is saved on disk.
+
+## Gemini API
+- Integrated Google Gemini Vision API.
+- Converted image Buffer into Base64.
+- Prompt Engineering for structured JSON output.
+- Parsed Gemini response into JavaScript object.
+- Stored AI analysis inside MongoDB.
+
+## Backend Flow
+
+Frontend
+↓
+
+Axios POST
+
+↓
+
+Express Route
+
+↓
+
+Multer Middleware
+
+↓
+
+Controller
+
+↓
+
+Gemini Service
+
+↓
+
+MongoDB
+
+↓
+
+Frontend Response
+
+## Security
+
+- Stored API Keys inside .env
+- Added .env into .gitignore
+- Rotated MongoDB credentials after accidental exposure
+- Learned importance of secret management
+
+## Git
+
+- Repository organization
+- Feature branching workflow
+- Conventional Commits
