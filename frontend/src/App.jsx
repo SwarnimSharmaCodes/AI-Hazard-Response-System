@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import Layout from "./components/Layout";
-
 import Home from "./pages/Home";
 import Simulation from "./pages/Simulation";
 import Dashboard from "./pages/Dashboard";
 import Reports from "./pages/Reports";
 import About from "./pages/About";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -19,6 +19,8 @@ function App() {
           <Route path = "dashboard" element={<Dashboard />} />
           <Route path = "reports" element={<Reports />} />
           <Route path = "about" element={<About />} />
+          <Route path= "login" element={<Login />} />
+          <Route path= "signup" element={<Signup />} />
         </Route>
         <Route path = "*" element={<NotFound />} />
         </Routes>

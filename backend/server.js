@@ -5,6 +5,8 @@ import connectDB from "./config/db.js";
 
 import analyzeRoutes from "./routes/analyze.js";
 
+import authRoutes from "./routes/auth.js";
+
 connectDB();
 
 
@@ -15,6 +17,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api", analyzeRoutes);
+
+app.use("/api/auth", authRoutes);
 
 const PORT = 5000;
 

@@ -2,6 +2,11 @@ import mongoose from "mongoose";
 
 const reportSchema = new mongoose.Schema(
     {
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
+            required: true,
+        },
         hazardType: {
             type: String,
             required: true,
@@ -14,6 +19,10 @@ const reportSchema = new mongoose.Schema(
 
         severity: {
             type: String,
+            required: true,
+        },
+        confidence: {
+            type: Number,
             required: true,
         },
 

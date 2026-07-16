@@ -5,9 +5,12 @@ const API = axios.create({
 });
 
 export const analyzeImage = async (formData) => {
+
+    const token = localStorage.getItem("token");
+
     const response = await API.post("/api/analyze", formData, {
         headers: {
-            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${token}`
         },
     });
 

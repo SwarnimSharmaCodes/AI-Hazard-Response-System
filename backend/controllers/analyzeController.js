@@ -23,6 +23,8 @@ const analyzeImage = async (req, res) => {
             req.file.mimetype
         );
 
+        console.log(aiResponse);
+
         const cleanResponse = aiResponse
             .replace(/```json/g, "")
             .replace(/```/g, "")
@@ -31,6 +33,7 @@ const analyzeImage = async (req, res) => {
         const aiData = JSON.parse(cleanResponse);
 
         const reportData = {
+            user: req.user.id, 
             hazardType: aiData.hazardType,
             location: "Unknown",
             severity: aiData.severity,
@@ -58,7 +61,11 @@ const analyzeImage = async (req, res) => {
 const getReports = async (req, res) => {
     try {
 
-        const reports = await Report.find().sort({ createdAt: -1 });
+        const reports = await Report.find({
+            user: req.user.id,
+        }).sort({
+            createdAt: -1,
+        });
 
         res.status(200).json(reports);
 

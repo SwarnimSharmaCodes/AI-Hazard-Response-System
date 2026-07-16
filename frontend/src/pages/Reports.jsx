@@ -3,6 +3,7 @@ import axios from "axios";
 import DashboardCard from "../components/DashboardCard";
 import ReportTable from "../components/ReportTable";
 import "../styles/pages.css";
+import API from "../services/api";
 
 function Reports() {
 
@@ -16,9 +17,13 @@ function Reports() {
     const fetchReports = async () => {
 
     try {
-
-        const response = await axios.get(
-            "http://localhost:5000/api/reports"
+        const response = await API.get(
+            "/api/reports",
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+            }
         );
 
         setReports(response.data);

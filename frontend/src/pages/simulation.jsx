@@ -25,36 +25,35 @@ function Simulation() {
 
     const handleAnalyze = async () => {
 
-    if (!selectedImage) {
-
-        alert("Please upload an image first.");
-
+         if (!selectedImage) {
+        alert("Please select an image");
         return;
     }
+
+    const formData = new FormData();
+    formData.append("image", selectedImage);
 
     try {
 
         setLoading(true);
 
-        const formData = new FormData();
-
-        formData.append("image", selectedImage);
-
         const data = await analyzeImage(formData);
+
+        console.log(data);
 
         setResult(data);
 
     }
+    catch(err){
 
-    catch (error) {
+        console.log(err);
 
-        console.error(error);
+        console.log(err.response);
 
-        alert("Analysis failed.");
+        alert(err.response?.data?.message || "Analysis failed");
 
     }
-
-    finally {
+    finally{
 
         setLoading(false);
 
