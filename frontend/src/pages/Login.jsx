@@ -30,12 +30,11 @@ function Login() {
 
             );
 
+            console.log(response.data);
+
             login(
-
-                response.data.user,
-
-                response.data.token
-
+                response.data.token,
+                response.data.user
             );
 
             alert("Login Successful");

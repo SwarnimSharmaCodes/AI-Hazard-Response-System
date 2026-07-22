@@ -1,56 +1,67 @@
-import analysisData from "../data/analysisData";
-
-function AnalysisTable() {
+function AnalysisTable({ reports }) {
 
     return (
 
-         <div className="analysis-table">
+        <div className="analysis-table">
 
-        <h2>Recent Analysis</h2>
+            <h2>Recent Analysis</h2>
 
-        <table>
+            <table>
 
-    <thead>
+                <thead>
 
-        <tr>
+                    <tr>
 
-            <th>Hazard</th>
+                        <th>Hazard</th>
+                        <th>Severity</th>
+                        <th>Confidence</th>
+                        <th>Date</th>
 
-            <th>Severity</th>
+                    </tr>
 
-            <th>Confidence</th>
+                </thead>
 
-            <th>Time</th>
+                <tbody>
 
-        </tr>
+                    {
+                        reports.length === 0 ? (
 
-    </thead>
+                            <tr>
 
-    <tbody>
+                                <td colSpan="4" style={{ textAlign: "center" }}>
+                                    No reports found.
+                                </td>
 
-{
-    analysisData.map((item) => (
+                            </tr>
 
-        <tr key={item.id}>
+                        ) : (
 
-            <td>{item.hazard}</td>
+                            reports.map((report) => (
 
-            <td>{item.severity}</td>
+                                <tr key={report._id}>
 
-            <td>{item.confidence}</td>
+                                    <td>{report.hazardType}</td>
 
-            <td>{item.time}</td>
+                                    <td>{report.severity}</td>
 
-        </tr>
+                                    <td>{report.confidence}%</td>
 
-    ))
-}
+                                    <td>
+                                        {new Date(report.createdAt).toLocaleDateString()}
+                                    </td>
 
-</tbody>
+                                </tr>
 
-</table>
+                            ))
 
-    </div>
+                        )
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
 
     );
 

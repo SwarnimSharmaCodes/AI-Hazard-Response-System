@@ -790,3 +790,101 @@ Frontend Response
 - Repository organization
 - Feature branching workflow
 - Conventional Commits
+
+
+# Sprint 1 - Collapsible Sidebar
+
+## React
+
+- useState
+- Lifting State Up
+- Prop Drilling
+- Layout Components
+- React Router Outlet
+
+## JavaScript
+
+- Boolean state
+- Event handling
+- Callback functions
+
+## What I Built
+
+- Started converting the application from a fixed dashboard layout to a collapsible drawer layout.
+- Moved sidebar state into the Layout component so both Topbar and Sidebar can share it.
+
+## Interview Question
+
+Q. Why is the sidebar state stored in Layout instead of Sidebar?
+
+A. Because both the Sidebar and Topbar need access to it. React recommends lifting shared state to the nearest common parent.
+
+
+## CSS
+
+- CSS Transform
+- TranslateX Animation
+- Overlay Design
+- Responsive Drawer
+
+## React
+
+- Shared State
+- Conditional Rendering
+- Props
+
+## What I Built
+
+Completed the application layout using a collapsible sidebar architecture. The layout now supports responsive navigation and provides a cleaner foundation for all pages.
+
+## Interview Question
+
+Q. Why use CSS transforms for animations?
+
+A. Transforms are optimized for smoother rendering and generally avoid expensive layout recalculations, making them a good choice for UI animations.
+
+
+
+## Sprint 2 - Hero Section
+
+### React
+- Component Composition
+- React Router Link
+- Reusable Buttons
+
+### CSS
+- Flexbox Layout
+- Responsive Design
+- Keyframe Animations
+- CSS Variables
+
+### Built
+- Hero section
+- CTA buttons
+- Responsive layout
+- Floating illustration
+
+### Interview Question
+Why split a page into multiple components?
+
+Answer:
+To improve maintainability, readability, reusability, and testing.
+
+
+
+## Sprint 3 - Features Section
+
+### React
+- Rendering lists with map()
+- Using reusable data arrays
+- Component composition
+
+### CSS
+- CSS Grid
+- Card hover animations
+- Responsive layouts
+
+### Built
+- Features section
+- Responsive feature cards
+- Lucide React icons

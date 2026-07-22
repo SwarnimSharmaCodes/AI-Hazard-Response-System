@@ -1,0 +1,40 @@
+.app-layout {
+
+    display: flex;
+
+    min-height: 100vh;
+
+    background: var(--background);
+
+}
+
+.page-content {
+
+    flex: 1;
+
+    padding: 32px;
+
+    overflow-y: auto;
+
+}
+
+
+.content-wrapper{
+
+    flex:1;
+
+    transition:all .35s ease;
+
+    min-width:0;
+
+}
+
+@media(min-width:992px){
+
+    .content-shift{
+
+        transform:translateX(260px);
+
+    }
+
+}

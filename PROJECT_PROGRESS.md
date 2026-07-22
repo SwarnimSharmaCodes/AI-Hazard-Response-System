@@ -8,16 +8,16 @@
 - [x] Report Storage
 
 ## Phase 2
-- [ ] Authentication
-- [ ] Protected Routes
-- [ ] User-specific Reports
+- [x] Authentication
+- [x] Protected Routes
+- [x] User-specific Reports
 
 ## Phase 3
-- [ ] Dashboard Analytics
-- [ ] Knowledge Base
+- [x] Dashboard Analytics
+- [x] Knowledge Base
 
 ## Phase 4
-- [ ] UI Redesign
+- [x] UI Redesign
 - [ ] Webcam Detection
 - [ ] Video Analysis
 - [ ] GPS Tagging

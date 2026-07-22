@@ -15,24 +15,6 @@ router.post(
     analyzeImage
 );
 
-// router.post(
-//     "/analyze",
-
-//     (req,res,next)=>{
-//         console.log("Reached Route");
-//         next();
-//     },
-
-//     upload.single("image"),
-
-//     (req,res,next)=>{
-//         console.log("Upload Done");
-//         next();
-//     },
-
-//     analyzeImage
-// );
-
 router.get("/reports", protect, getReports);
 
 export default router;

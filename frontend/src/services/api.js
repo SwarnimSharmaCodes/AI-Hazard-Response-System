@@ -17,4 +17,20 @@ export const analyzeImage = async (formData) => {
     return response.data;
 };
 
+export const getDashboardData = async () => {
+
+    const token = localStorage.getItem("token");
+
+    const response = await API.get(
+        "/api/dashboard",
+        {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        }
+    );
+
+    return response.data;
+};
+
 export default API;

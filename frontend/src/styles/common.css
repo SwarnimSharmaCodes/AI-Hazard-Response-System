@@ -1,0 +1,89 @@
+.page{
+
+    padding:32px;
+
+}
+
+.page-header{
+
+    margin-bottom:28px;
+
+}
+
+.page-title{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:var(--heading);
+
+}
+
+.page-subtitle{
+
+    color:var(--text);
+
+    margin-top:8px;
+
+}
+
+.card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow);
+
+    padding:24px;
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:white;
+
+    border:none;
+
+    border-radius:var(--radius-md);
+
+    padding:12px 22px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.btn-primary:hover{
+
+    background:var(--primary-hover);
+
+}
+
+.btn-primary{
+
+    text-decoration:none;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.btn-secondary{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}

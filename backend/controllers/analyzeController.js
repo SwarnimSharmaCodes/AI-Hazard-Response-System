@@ -32,6 +32,26 @@ const analyzeImage = async (req, res) => {
 
         const aiData = JSON.parse(cleanResponse);
 
+        const hazard = aiData.hazardType.toLowerCase();
+
+        if (hazard.includes("fire"))
+            aiData.hazardType = "Fire";
+
+        else if (hazard.includes("elect"))
+            aiData.hazardType = "Electrical";
+
+        else if (hazard.includes("chemical"))
+            aiData.hazardType = "Chemical";
+
+        else if (hazard.includes("gas"))
+            aiData.hazardType = "Gas";
+
+        else if (hazard.includes("machine"))
+            aiData.hazardType = "Machinery";
+
+        else
+            aiData.hazardType = "Other";
+
         const reportData = {
             user: req.user.id, 
             hazardType: aiData.hazardType,

@@ -41,3 +41,21 @@
     border-bottom: 2px solid #38bdf8;
     padding-bottom: 4px;
 }
+
+.logout-btn{
+    background:#ff4d4f;
+    color:white;
+    border:none;
+    padding:8px 14px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.logout-btn:hover{
+    background:#d9363e;
+}
+
+.user-name{
+    color:white;
+    font-weight:600;
+}

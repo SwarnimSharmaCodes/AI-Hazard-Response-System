@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
+import Layout from "./components/layout/Layout";
 import Home from "./pages/Home";
 import Simulation from "./pages/Simulation";
 import Dashboard from "./pages/Dashboard";
@@ -12,19 +12,36 @@ import NotFound from "./pages/NotFound";
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path = "/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path = "simulation" element={<Simulation />} />
-          <Route path = "dashboard" element={<Dashboard />} />
-          <Route path = "reports" element={<Reports />} />
-          <Route path = "about" element={<About />} />
-          <Route path= "login" element={<Login />} />
-          <Route path= "signup" element={<Signup />} />
+
+    <Routes>
+
+        {/* Public Pages */}
+
+        <Route path="/" element={<Layout />}>
+
+            <Route index element={<Home />} />
+
+            <Route path="simulation" element={<Simulation />} />
+
+            <Route path="dashboard" element={<Dashboard />} />
+
+            <Route path="reports" element={<Reports />} />
+
+            <Route path="about" element={<About />} />
+
         </Route>
-        <Route path = "*" element={<NotFound />} />
-        </Routes>
-    </BrowserRouter>
+
+        {/* Authentication */}
+
+        <Route path="/login" element={<Login />} />
+
+        <Route path="/signup" element={<Signup />} />
+
+        <Route path="*" element={<NotFound />} />
+
+    </Routes>
+
+</BrowserRouter>
   );
 }
 
